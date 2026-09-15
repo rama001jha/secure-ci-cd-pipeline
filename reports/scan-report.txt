@@ -4,45 +4,9 @@ Report Summary
 ┌──────────────────────────────┬────────┬─────────────────┬─────────┐
 │            Target            │  Type  │ Vulnerabilities │ Secrets │
 ├──────────────────────────────┼────────┼─────────────────┼─────────┤
-│ secure-ci-cd (alpine 3.24.1) │ alpine │        7        │    -    │
+│ secure-ci-cd (alpine 3.24.1) │ alpine │        0        │    -    │
 └──────────────────────────────┴────────┴─────────────────┴─────────┘
 Legend:
 - '-': Not scanned
 - '0': Clean (no security findings detected)
 
-
-secure-ci-cd (alpine 3.24.1)
-============================
-Total: 7 (HIGH: 7, CRITICAL: 0)
-
-┌─────────┬────────────────┬──────────┬────────┬───────────────────┬───────────────┬────────────────────────────────────────────────────────────┐
-│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version │                           Title                            │
-├─────────┼────────────────┼──────────┼────────┼───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
-│ libuuid │ CVE-2026-53612 │ HIGH     │ fixed  │ 2.42.1-r0         │ 2.42.3-r0     │ util-linux: util-linux: TOCTOU in the mount program when   │
-│         │                │          │        │                   │               │ applying post-mount ownership/mode changes...              │
-│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-53612                 │
-│         ├────────────────┤          │        │                   │               ├────────────────────────────────────────────────────────────┤
-│         │ CVE-2026-53613 │          │        │                   │               │ util-linux: util-linux: TOCTOU in the mount program via    │
-│         │                │          │        │                   │               │ ancestor directory swap on...                              │
-│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-53613                 │
-│         ├────────────────┤          │        │                   │               ├────────────────────────────────────────────────────────────┤
-│         │ CVE-2026-53614 │          │        │                   │               │ util-linux: util-linux: SUID mount(8) allows nosuid/noexec │
-│         │                │          │        │                   │               │ bypass via LIBMOUNT_FORCE_MOUNT2                           │
-│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-53614                 │
-│         ├────────────────┤          │        │                   │               ├────────────────────────────────────────────────────────────┤
-│         │ CVE-2026-76642 │          │        │                   │               │ util-linux: util-linux: failed external mount helper still │
-│         │                │          │        │                   │               │ runs privileged X-mount post-hooks                         │
-│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                 │
-│         ├────────────────┤          │        │                   ├───────────────┼────────────────────────────────────────────────────────────┤
-│         │ CVE-2026-78408 │          │        │                   │ 2.42.3-r1     │ util-linux: util-linux: nsenter --join-cgroup leaks root   │
-│         │                │          │        │                   │               │ cgroup migration authority                                 │
-│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                 │
-│         ├────────────────┤          │        │                   ├───────────────┼────────────────────────────────────────────────────────────┤
-│         │ CVE-2026-78409 │          │        │                   │ 2.42.3-r0     │ util-linux: util-linux: X-mount.subdir detached-tree       │
-│         │                │          │        │                   │               │ resolution can escape via intermediate symlinks            │
-│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                 │
-│         ├────────────────┤          │        │                   │               ├────────────────────────────────────────────────────────────┤
-│         │ CVE-2026-78410 │          │        │                   │               │ util-linux: util-linux: restricted bind mounts do not pin  │
-│         │                │          │        │                   │               │ the source, allowing X-mount.owner/group/mode...           │
-│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                 │
-└─────────┴────────────────┴──────────┴────────┴───────────────────┴───────────────┴────────────────────────────────────────────────────────────┘
