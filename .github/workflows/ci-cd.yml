@@ -1,29 +1,24 @@
 name: Secure CI/CD Pipeline
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
-    security-pipeline:
-        runs-on: ubuntu-latest
+  security-pipeline:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v5
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
 
-            - name: Build Docker image
-              run: docker build --no-cache -t secure-ci-cd .
+      - name: Build Docker image
+        run: docker build --no-cache -t secure-ci-cd .
 
-            - name: Scan Docker image
-              run: |
-                  chmod +x scan.sh
-                  ./scan.sh secure-ci-cd
-
-            - name: Upload Trivy report
-              if: always()
-              uses: actions/upload-artifact@v4
-              with:
-                  name: trivy-scan-report
-                  path: reports/scan-report.txt
+      - name: Trivy Security Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: secure-ci-cd
+          severity: HIGH,CRITICAL
+          exit-code: '1'
