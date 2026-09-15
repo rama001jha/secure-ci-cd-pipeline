@@ -1,0 +1,17 @@
+name: Secure CI/CD Pipeline
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    security-pipeline:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v5
+
+            - name: Test
+              run: echo "GitHub Actions is working!"
