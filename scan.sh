@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME=secure-ci-cd
+IMAGE_NAME=$1
 
 mkdir -p reports
 
