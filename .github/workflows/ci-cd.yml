@@ -18,3 +18,10 @@ jobs:
 
             - name: Scan Docker image
               run: ./scan.sh
+
+            - name: Upload Trivy report
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                  name: trivy-scan-report
+                  path: reports/scan-report.txt
