@@ -1,413 +1,48 @@
 
 Report Summary
 
-┌───────────────────────────┬────────┬─────────────────┬─────────┐
-│          Target           │  Type  │ Vulnerabilities │ Secrets │
-├───────────────────────────┼────────┼─────────────────┼─────────┤
-│ secure-ci-cd (debian 9.8) │ debian │       113       │    -    │
-└───────────────────────────┴────────┴─────────────────┴─────────┘
+┌──────────────────────────────┬────────┬─────────────────┬─────────┐
+│            Target            │  Type  │ Vulnerabilities │ Secrets │
+├──────────────────────────────┼────────┼─────────────────┼─────────┤
+│ secure-ci-cd (alpine 3.24.1) │ alpine │        7        │    -    │
+└──────────────────────────────┴────────┴─────────────────┴─────────┘
 Legend:
 - '-': Not scanned
 - '0': Clean (no security findings detected)
 
 
-secure-ci-cd (debian 9.8)
-=========================
-Total: 113 (HIGH: 82, CRITICAL: 31)
+secure-ci-cd (alpine 3.24.1)
+============================
+Total: 7 (HIGH: 7, CRITICAL: 0)
 
-┌─────────────────┬──────────────────┬──────────┬──────────────┬────────────────────────┬────────────────────────┬──────────────────────────────────────────────────────────────┐
-│     Library     │  Vulnerability   │ Severity │    Status    │   Installed Version    │     Fixed Version      │                            Title                             │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ bsdutils        │ CVE-2016-2779    │ HIGH     │ affected     │ 1:2.29.2-1+deb9u1      │                        │ util-linux: runuser tty hijack via TIOCSTI ioctl             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2016-2779                    │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ dpkg            │ CVE-2022-1664    │ CRITICAL │ fixed        │ 1.18.25                │ 1.18.26                │ Dpkg::Source::Archive in dpkg, the Debian package management │
-│                 │                  │          │              │                        │                        │ system, b ...                                                │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-1664                    │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ e2fslibs        │ CVE-2022-1304    │ HIGH     │ affected     │ 1.43.4-2               │                        │ e2fsprogs: out-of-bounds read/write via crafted filesystem   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-1304                    │
-├─────────────────┤                  │          │              │                        ├────────────────────────┤                                                              │
-│ e2fsprogs       │                  │          │              │                        │                        │                                                              │
-│                 │                  │          │              │                        │                        │                                                              │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ gcc-6-base      │ CVE-2018-12886   │          │ will_not_fix │ 6.3.0-18+deb9u1        │                        │ gcc: spilling of stack protection address in cfgexpand.c and │
-│                 │                  │          │              │                        │                        │ function.c leads to...                                       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-12886                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ gpgv            │ CVE-2018-1000858 │          │ affected     │ 2.1.18-8~deb9u4        │                        │ gnupg2: Cross site request forgery in dirmngr resulting in   │
-│                 │                  │          │              │                        │                        │ an information disclosure...                                 │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-1000858                 │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ gzip            │ CVE-2022-1271    │          │ fixed        │ 1.6-5+b1               │ 1.6-5+deb9u1           │ gzip: arbitrary-file-write vulnerability                     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-1271                    │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libblkid1       │ CVE-2016-2779    │          │ affected     │ 2.29.2-1+deb9u1        │                        │ util-linux: runuser tty hijack via TIOCSTI ioctl             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2016-2779                    │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libbsd0         │ CVE-2019-20367   │ CRITICAL │ fixed        │ 0.8.3-1                │ 0.8.3-1+deb9u1         │ nlist.c in libbsd before 0.10.0 has an out-of-bounds read    │
-│                 │                  │          │              │                        │                        │ during a com...                                              │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-20367                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libbz2-1.0      │ CVE-2019-12900   │          │ affected     │ 1.0.6-8.1              │                        │ bzip2: bzip2: Data integrity error when decompressing (with  │
-│                 │                  │          │              │                        │                        │ data integrity tests fail)....                               │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-12900                   │
-├─────────────────┼──────────────────┼──────────┤              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libcomerr2      │ CVE-2022-1304    │ HIGH     │              │ 1.43.4-2               │                        │ e2fsprogs: out-of-bounds read/write via crafted filesystem   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-1304                    │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libdb5.3        │ CVE-2019-8457    │ CRITICAL │ will_not_fix │ 5.3.28-12+deb9u1       │                        │ sqlite: heap out-of-bound read in function rtreenode()       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-8457                    │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libexpat1       │ CVE-2022-22822   │          │ fixed        │ 2.2.0-2+deb9u1         │ 2.2.0-2+deb9u4         │ expat: Integer overflow in addBinding in xmlparse.c          │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-22822                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-22823   │          │              │                        │                        │ expat: Integer overflow in build_model in xmlparse.c         │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-22823                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-22824   │          │              │                        │                        │ expat: Integer overflow in defineAttribute in xmlparse.c     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-22824                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-23852   │          │              │                        │ 2.2.0-2+deb9u5         │ expat: Integer overflow in function XML_GetBuffer            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-23852                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-25235   │          │              │                        │                        │ expat: Malformed 2- and 3-byte UTF-8 sequences can lead to   │
-│                 │                  │          │              │                        │                        │ arbitrary code...                                            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-25235                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-25236   │          │              │                        │                        │ expat: Namespace-separator characters in "xmlns[:prefix]"    │
-│                 │                  │          │              │                        │                        │ attribute values can lead to arbitrary code...               │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-25236                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-25315   │          │              │                        │                        │ expat: Integer overflow in storeRawNames()                   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-25315                   │
-│                 ├──────────────────┼──────────┤              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2018-20843   │ HIGH     │              │                        │ 2.2.0-2+deb9u2         │ expat: large number of colons in input makes parser consume  │
-│                 │                  │          │              │                        │                        │ high amount...                                               │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-20843                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-15903   │          │              │                        │ 2.2.0-2+deb9u3         │ expat: heap-based buffer over-read via crafted XML input     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-15903                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2021-45960   │          │              │                        │ 2.2.0-2+deb9u4         │ expat: Large number of prefixed XML attributes on a single   │
-│                 │                  │          │              │                        │                        │ tag can...                                                   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-45960                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2021-46143   │          │              │                        │                        │ expat: Integer overflow in doProlog in xmlparse.c            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-46143                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-22825   │          │              │                        │                        │ expat: Integer overflow in lookup in xmlparse.c              │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-22825                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-22826   │          │              │                        │                        │ expat: Integer overflow in nextScaffoldPart in xmlparse.c    │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-22826                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-22827   │          │              │                        │                        │ expat: Integer overflow in storeAtts in xmlparse.c           │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-22827                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-23990   │          │              │                        │                        │ expat: integer overflow in the doProlog function             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-23990                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libfdisk1       │ CVE-2016-2779    │          │ affected     │ 2.29.2-1+deb9u1        │                        │ util-linux: runuser tty hijack via TIOCSTI ioctl             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2016-2779                    │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libfreetype6    │ CVE-2020-15999   │ CRITICAL │ fixed        │ 2.6.3-3.2              │ 2.6.3-3.2+deb9u2       │ freetype: Heap-based buffer overflow due to integer          │
-│                 │                  │          │              │                        │                        │ truncation in Load_SBit_Png                                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-15999                   │
-│                 ├──────────────────┤          ├──────────────┤                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-27404   │          │ affected     │                        │                        │ FreeType: Buffer overflow in sfnt_init_face                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-27404                   │
-│                 ├──────────────────┼──────────┤              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-27405   │ HIGH     │              │                        │                        │ FreeType: Segmentation violation via FNT_Size_Request        │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-27405                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-27406   │          │              │                        │                        │ Freetype: Segmentation violation via FT_Request_Size         │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-27406                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libgcc1         │ CVE-2018-12886   │          │ will_not_fix │ 1:6.3.0-18+deb9u1      │                        │ gcc: spilling of stack protection address in cfgexpand.c and │
-│                 │                  │          │              │                        │                        │ function.c leads to...                                       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-12886                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libgcrypt20     │ CVE-2021-33560   │          │ affected     │ 1.7.6-2+deb9u3         │                        │ libgcrypt: mishandles ElGamal encryption because it lacks    │
-│                 │                  │          │              │                        │                        │ exponent blinding to address a...                            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-33560                   │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libgd3          │ CVE-2017-6363    │          │              │ 2.2.4-2+deb9u4         │                        │ In the GD Graphics Library (aka LibGD) through 2.2.5, there  │
-│                 │                  │          │              │                        │                        │ is a...                                                      │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-6363                    │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libicu57        │ CVE-2020-10531   │          │ fixed        │ 57.1-6+deb9u2          │ 57.1-6+deb9u4          │ ICU: Integer overflow in UnicodeString::doAppend()           │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-10531                   │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libjpeg62-turbo │ CVE-2019-2201    │          │              │ 1:1.5.1-2              │ 1:1.5.1-2+deb9u2       │ libjpeg-turbo: several integer overflows and subsequent      │
-│                 │                  │          │              │                        │                        │ segfaults when attempting to compress/decompress             │
-│                 │                  │          │              │                        │                        │ gigapixel...                                                 │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-2201                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-13790   │          │              │                        │ 1:1.5.1-2+deb9u1       │ libjpeg-turbo: heap-based buffer over-read in get_rgb_row()  │
-│                 │                  │          │              │                        │                        │ in rdppm.c                                                   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-13790                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-14152   │          │              │                        │                        │ libjpeg: improper handling of max_memory_to_use setting can  │
-│                 │                  │          │              │                        │                        │ lead to excessive memory consumption...                      │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-14152                   │
-├─────────────────┼──────────────────┼──────────┤              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ liblz4-1        │ CVE-2021-3520    │ CRITICAL │              │ 0.0~r131-2+b1          │ 0.0~r131-2+deb9u1      │ lz4: memory corruption due to an integer overflow bug caused │
-│                 │                  │          │              │                        │                        │ by memmove...                                                │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-3520                    │
-├─────────────────┼──────────────────┼──────────┤              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ liblzma5        │ CVE-2022-1271    │ HIGH     │              │ 5.2.2-1.2+b1           │ 5.2.2-1.2+deb9u1       │ gzip: arbitrary-file-write vulnerability                     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-1271                    │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libmount1       │ CVE-2016-2779    │          │ affected     │ 2.29.2-1+deb9u1        │                        │ util-linux: runuser tty hijack via TIOCSTI ioctl             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2016-2779                    │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libncurses5     │ CVE-2022-29458   │          │              │ 6.0+20161126-1+deb9u2  │                        │ ncurses: segfaulting OOB read                                │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
-├─────────────────┤                  │          │              │                        ├────────────────────────┤                                                              │
-│ libncursesw5    │                  │          │              │                        │                        │                                                              │
-│                 │                  │          │              │                        │                        │                                                              │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libpng16-16     │ CVE-2017-12652   │ CRITICAL │ will_not_fix │ 1.6.28-1               │                        │ libpng: does not check length of chunks against user limit   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-12652                   │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libsmartcols1   │ CVE-2016-2779    │ HIGH     │ affected     │ 2.29.2-1+deb9u1        │                        │ util-linux: runuser tty hijack via TIOCSTI ioctl             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2016-2779                    │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libss2          │ CVE-2022-1304    │          │              │ 1.43.4-2               │                        │ e2fsprogs: out-of-bounds read/write via crafted filesystem   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-1304                    │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libssl1.1       │ CVE-2019-1543    │          │ fixed        │ 1.1.0j-1~deb9u1        │ 1.1.0k-1~deb9u1        │ openssl: ChaCha20-Poly1305 with long nonces                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-1543                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2021-23840   │          │              │                        │ 1.1.0l-1~deb9u3        │ openssl: integer overflow in CipherUpdate                    │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-23840                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2021-3712    │          │              │                        │ 1.1.0l-1~deb9u4        │ openssl: Read buffer overruns processing ASN.1 strings       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-3712                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-0778    │          │              │                        │ 1.1.0l-1~deb9u5        │ openssl: Infinite loop in BN_mod_sqrt() reachable when       │
-│                 │                  │          │              │                        │                        │ parsing certificates                                         │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-0778                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-1292    │          │              │                        │ 1.1.0l-1~deb9u6        │ openssl: c_rehash script allows command injection            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-1292                    │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libstdc++6      │ CVE-2018-12886   │          │ will_not_fix │ 6.3.0-18+deb9u1        │                        │ gcc: spilling of stack protection address in cfgexpand.c and │
-│                 │                  │          │              │                        │                        │ function.c leads to...                                       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-12886                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libsystemd0     │ CVE-2018-15686   │          │ fixed        │ 232-25+deb9u9          │ 232-25+deb9u10         │ systemd: line splitting via fgets() allows for state         │
-│                 │                  │          │              │                        │                        │ injection during daemon-reexec                               │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-15686                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-3842    │          │              │                        │ 232-25+deb9u11         │ systemd: Spoofing of XDG_SEAT allows for actions to be       │
-│                 │                  │          │              │                        │                        │ checked against "allow_active"...                            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-3842                    │
-│                 ├──────────────────┤          ├──────────────┤                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-3843    │          │ will_not_fix │                        │                        │ systemd: services with DynamicUser can create SUID/SGID      │
-│                 │                  │          │              │                        │                        │ binaries                                                     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-3843                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-3844    │          │              │                        │                        │ systemd: services with DynamicUser can get new privileges    │
-│                 │                  │          │              │                        │                        │ and create SGID binaries...                                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-3844                    │
-│                 ├──────────────────┤          ├──────────────┤                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-1712    │          │ fixed        │                        │ 232-25+deb9u14         │ systemd: use-after-free when asynchronous polkit queries are │
-│                 │                  │          │              │                        │                        │ performed                                                    │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-1712                    │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libtiff5        │ CVE-2018-12900   │          │              │ 4.0.8-2+deb9u4         │ 4.0.8-2+deb9u5         │ libtiff: Heap-based buffer overflow in the                   │
-│                 │                  │          │              │                        │                        │ cpSeparateBufToContigBuf function resulting in a denial...   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-12900                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2018-17100   │          │              │                        │                        │ libtiff: Integer overflow in multiply_ms in tools/ppm2tiff.c │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-17100                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-17546   │          │              │                        │                        │ libtiff: integer overflow leading to heap-based buffer       │
-│                 │                  │          │              │                        │                        │ overflow in tif_getimage.c                                   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-17546                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-19131   │          │              │                        │ 4.0.8-2+deb9u7         │ libtiff: a buffer overflow via the "invertImage()" may lead  │
-│                 │                  │          │              │                        │                        │ to DoS                                                       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-19131                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-35523   │          │              │                        │ 4.0.8-2+deb9u6         │ libtiff: Integer overflow in tif_getimage.c                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-35523                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-35524   │          │              │                        │                        │ libtiff: Heap-based buffer overflow in TIFF2PDF tool         │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-35524                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libtinfo5       │ CVE-2022-29458   │          │ affected     │ 6.0+20161126-1+deb9u2  │                        │ ncurses: segfaulting OOB read                                │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libudev1        │ CVE-2018-15686   │          │ fixed        │ 232-25+deb9u9          │ 232-25+deb9u10         │ systemd: line splitting via fgets() allows for state         │
-│                 │                  │          │              │                        │                        │ injection during daemon-reexec                               │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-15686                   │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-3842    │          │              │                        │ 232-25+deb9u11         │ systemd: Spoofing of XDG_SEAT allows for actions to be       │
-│                 │                  │          │              │                        │                        │ checked against "allow_active"...                            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-3842                    │
-│                 ├──────────────────┤          ├──────────────┤                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-3843    │          │ will_not_fix │                        │                        │ systemd: services with DynamicUser can create SUID/SGID      │
-│                 │                  │          │              │                        │                        │ binaries                                                     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-3843                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-3844    │          │              │                        │                        │ systemd: services with DynamicUser can get new privileges    │
-│                 │                  │          │              │                        │                        │ and create SGID binaries...                                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-3844                    │
-│                 ├──────────────────┤          ├──────────────┤                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-1712    │          │ fixed        │                        │ 232-25+deb9u14         │ systemd: use-after-free when asynchronous polkit queries are │
-│                 │                  │          │              │                        │                        │ performed                                                    │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-1712                    │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libuuid1        │ CVE-2016-2779    │          │ affected     │ 2.29.2-1+deb9u1        │                        │ util-linux: runuser tty hijack via TIOCSTI ioctl             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2016-2779                    │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libwebp6        │ CVE-2018-25009   │ CRITICAL │ fixed        │ 0.5.2-1                │ 0.5.2-1+deb9u1         │ libwebp: out-of-bounds read in WebPMuxCreateInternal         │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-25009                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2018-25010   │          │              │                        │                        │ libwebp: out-of-bounds read in ApplyFilter()                 │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-25010                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2018-25011   │          │              │                        │                        │ libwebp: heap-based buffer overflow in PutLE16()             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-25011                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2018-25012   │          │              │                        │                        │ libwebp: out-of-bounds read in WebPMuxCreateInternal()       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-25012                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2018-25013   │          │              │                        │                        │ libwebp: out-of-bounds read in ShiftBytes()                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-25013                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2018-25014   │          │              │                        │                        │ libwebp: use of uninitialized value in ReadSymbol()          │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-25014                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-36328   │          │              │                        │                        │ libwebp: heap-based buffer overflow in WebPDecode*Into       │
-│                 │                  │          │              │                        │                        │ functions                                                    │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-36328                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-36329   │          │              │                        │                        │ libwebp: use-after-free in EmitFancyRGB() in dec/io_dec.c    │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-36329                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-36330   │          │              │                        │                        │ libwebp: out-of-bounds read in ChunkVerifyAndAssign() in     │
-│                 │                  │          │              │                        │                        │ mux/muxread.c                                                │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-36330                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-36331   │          │              │                        │                        │ libwebp: out-of-bounds read in ChunkAssignData() in          │
-│                 │                  │          │              │                        │                        │ mux/muxinternal.c                                            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-36331                   │
-│                 ├──────────────────┼──────────┼──────────────┤                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-36332   │ HIGH     │ will_not_fix │                        │                        │ libwebp: excessive memory allocation when reading a file     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-36332                   │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libx11-6        │ CVE-2021-31535   │ CRITICAL │ fixed        │ 2:1.6.4-3+deb9u1       │ 2:1.6.4-3+deb9u4       │ libX11: missing request length checks                        │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-31535                   │
-│                 ├──────────────────┼──────────┤              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-14363   │ HIGH     │              │                        │ 2:1.6.4-3+deb9u3       │ libX11: integer overflow leads to double free in locale      │
-│                 │                  │          │              │                        │                        │ handling                                                     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-14363                   │
-├─────────────────┼──────────────────┼──────────┤              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libx11-data     │ CVE-2021-31535   │ CRITICAL │              │                        │ 2:1.6.4-3+deb9u4       │ libX11: missing request length checks                        │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-31535                   │
-│                 ├──────────────────┼──────────┤              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-14363   │ HIGH     │              │                        │ 2:1.6.4-3+deb9u3       │ libX11: integer overflow leads to double free in locale      │
-│                 │                  │          │              │                        │                        │ handling                                                     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-14363                   │
-├─────────────────┼──────────────────┼──────────┤              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libxml2         │ CVE-2017-8872    │ CRITICAL │              │ 2.9.4+dfsg1-2.2+deb9u2 │ 2.9.4+dfsg1-2.2+deb9u3 │ libxml2: Out-of-bounds read in htmlParseTryOrFinish          │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-8872                    │
-│                 ├──────────────────┼──────────┤              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2017-16932   │ HIGH     │              │                        │ 2.9.4+dfsg1-2.2+deb9u6 │ libxml2: Infinite recursion in parameter entities            │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-16932                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2017-5130    │          │              │                        │                        │ chromium-browser: heap overflow in libxml2                   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-5130                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2018-14404   │          │              │                        │ 2.9.4+dfsg1-2.2+deb9u3 │ libxml2: NULL pointer dereference in xmlXPathCompOpEval()    │
-│                 │                  │          │              │                        │                        │ function in xpath.c                                          │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-14404                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-19956   │          │              │                        │                        │ libxml2: memory leak in xmlParseBalancedChunkMemoryRecover   │
-│                 │                  │          │              │                        │                        │ in parser.c                                                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-19956                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-20388   │          │              │                        │                        │ libxml2: memory leak in xmlSchemaPreRun in xmlschemas.c      │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-20388                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-7595    │          │              │                        │                        │ libxml2: infinite loop in xmlStringLenDecodeEntities in some │
-│                 │                  │          │              │                        │                        │ end-of-file situations                                       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-7595                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2021-3516    │          │              │                        │ 2.9.4+dfsg1-2.2+deb9u4 │ libxml2: Use-after-free in xmlEncodeEntitiesInternal() in    │
-│                 │                  │          │              │                        │                        │ entities.c                                                   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-3516                    │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2021-3517    │          │              │                        │                        │ libxml2: Heap-based buffer overflow in                       │
-│                 │                  │          │              │                        │                        │ xmlEncodeEntitiesInternal() in entities.c                    │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-3517                    │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2021-3518    │          │              │                        │                        │ libxml2: Use-after-free in xmlXIncludeDoProcess() in         │
-│                 │                  │          │              │                        │                        │ xinclude.c                                                   │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-3518                    │
-│                 ├──────────────────┤          │              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2022-23308   │          │              │                        │ 2.9.4+dfsg1-2.2+deb9u6 │ libxml2: Use-after-free of ID and IDREF attributes           │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-23308                   │
-├─────────────────┼──────────────────┼──────────┤              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ libxslt1.1      │ CVE-2019-11068   │ CRITICAL │              │ 1.1.29-2.1             │ 1.1.29-2.1+deb9u1      │ libxslt: xsltCheckRead and xsltCheckWrite routines security  │
-│                 │                  │          │              │                        │                        │ bypass by crafted URL                                        │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-11068                   │
-│                 ├──────────────────┼──────────┤              │                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2019-18197   │ HIGH     │              │                        │ 1.1.29-2.1+deb9u2      │ libxslt: use after free in xsltCopyText in transform.c could │
-│                 │                  │          │              │                        │                        │ lead to information...                                       │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2019-18197                   │
-├─────────────────┼──────────────────┼──────────┤              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ login           │ CVE-2017-12424   │ CRITICAL │              │ 1:4.4-4.1              │ 1:4.4-4.1+deb9u1       │ shadow-utils: Buffer overflow via newusers tool              │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-12424                   │
-│                 ├──────────────────┼──────────┤              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2017-20002   │ HIGH     │              │                        │                        │ The Debian shadow package before 1:4.5-1 for Shadow          │
-│                 │                  │          │              │                        │                        │ incorrectly lists ......                                     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-20002                   │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ mount           │ CVE-2016-2779    │          │ affected     │ 2.29.2-1+deb9u1        │                        │ util-linux: runuser tty hijack via TIOCSTI ioctl             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2016-2779                    │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ ncurses-base    │ CVE-2022-29458   │          │              │ 6.0+20161126-1+deb9u2  │                        │ ncurses: segfaulting OOB read                                │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
-├─────────────────┤                  │          │              │                        ├────────────────────────┤                                                              │
-│ ncurses-bin     │                  │          │              │                        │                        │                                                              │
-│                 │                  │          │              │                        │                        │                                                              │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ nginx           │ CVE-2021-3618    │          │              │ 1.14.2-1~stretch       │                        │ ALPACA: Application Layer Protocol Confusion - Analyzing and │
-│                 │                  │          │              │                        │                        │ Mitigating Cracks in TLS...                                  │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2021-3618                    │
-├─────────────────┼──────────────────┼──────────┼──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ passwd          │ CVE-2017-12424   │ CRITICAL │ fixed        │ 1:4.4-4.1              │ 1:4.4-4.1+deb9u1       │ shadow-utils: Buffer overflow via newusers tool              │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-12424                   │
-│                 ├──────────────────┼──────────┤              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2017-20002   │ HIGH     │              │                        │                        │ The Debian shadow package before 1:4.5-1 for Shadow          │
-│                 │                  │          │              │                        │                        │ incorrectly lists ......                                     │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2017-20002                   │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ perl-base       │ CVE-2020-10543   │          │              │ 5.24.1-3+deb9u5        │ 5.24.1-3+deb9u7        │ perl: heap-based buffer overflow in regular expression       │
-│                 │                  │          │              │                        │                        │ compiler leads to DoS                                        │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-10543                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-10878   │          │              │                        │                        │ perl: corruption of intermediate language state of compiled  │
-│                 │                  │          │              │                        │                        │ regular expression due to...                                 │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-10878                   │
-│                 ├──────────────────┤          │              │                        │                        ├──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-12723   │          │              │                        │                        │ perl: corruption of intermediate language state of compiled  │
-│                 │                  │          │              │                        │                        │ regular expression due to...                                 │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-12723                   │
-│                 ├──────────────────┤          ├──────────────┤                        ├────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                 │ CVE-2020-16156   │          │ affected     │                        │                        │ perl-CPAN: Bypass of verification of signatures in CHECKSUMS │
-│                 │                  │          │              │                        │                        │ files                                                        │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2020-16156                   │
-├─────────────────┼──────────────────┤          │              ├────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ util-linux      │ CVE-2016-2779    │          │              │ 2.29.2-1+deb9u1        │                        │ util-linux: runuser tty hijack via TIOCSTI ioctl             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2016-2779                    │
-├─────────────────┼──────────────────┤          ├──────────────┼────────────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ zlib1g          │ CVE-2018-25032   │          │ fixed        │ 1:1.2.8.dfsg-5         │ 1:1.2.8.dfsg-5+deb9u1  │ zlib: A flaw found in zlib when compressing (not             │
-│                 │                  │          │              │                        │                        │ decompressing) certain inputs...                             │
-│                 │                  │          │              │                        │                        │ https://avd.aquasec.com/nvd/cve-2018-25032                   │
-└─────────────────┴──────────────────┴──────────┴──────────────┴────────────────────────┴────────────────────────┴──────────────────────────────────────────────────────────────┘
+┌─────────┬────────────────┬──────────┬────────┬───────────────────┬───────────────┬────────────────────────────────────────────────────────────┐
+│ Library │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version │                           Title                            │
+├─────────┼────────────────┼──────────┼────────┼───────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ libuuid │ CVE-2026-53612 │ HIGH     │ fixed  │ 2.42.1-r0         │ 2.42.3-r0     │ util-linux: util-linux: TOCTOU in the mount program when   │
+│         │                │          │        │                   │               │ applying post-mount ownership/mode changes...              │
+│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-53612                 │
+│         ├────────────────┤          │        │                   │               ├────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-53613 │          │        │                   │               │ util-linux: util-linux: TOCTOU in the mount program via    │
+│         │                │          │        │                   │               │ ancestor directory swap on...                              │
+│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-53613                 │
+│         ├────────────────┤          │        │                   │               ├────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-53614 │          │        │                   │               │ util-linux: util-linux: SUID mount(8) allows nosuid/noexec │
+│         │                │          │        │                   │               │ bypass via LIBMOUNT_FORCE_MOUNT2                           │
+│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-53614                 │
+│         ├────────────────┤          │        │                   │               ├────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-76642 │          │        │                   │               │ util-linux: util-linux: failed external mount helper still │
+│         │                │          │        │                   │               │ runs privileged X-mount post-hooks                         │
+│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-76642                 │
+│         ├────────────────┤          │        │                   ├───────────────┼────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-78408 │          │        │                   │ 2.42.3-r1     │ util-linux: util-linux: nsenter --join-cgroup leaks root   │
+│         │                │          │        │                   │               │ cgroup migration authority                                 │
+│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-78408                 │
+│         ├────────────────┤          │        │                   ├───────────────┼────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-78409 │          │        │                   │ 2.42.3-r0     │ util-linux: util-linux: X-mount.subdir detached-tree       │
+│         │                │          │        │                   │               │ resolution can escape via intermediate symlinks            │
+│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-78409                 │
+│         ├────────────────┤          │        │                   │               ├────────────────────────────────────────────────────────────┤
+│         │ CVE-2026-78410 │          │        │                   │               │ util-linux: util-linux: restricted bind mounts do not pin  │
+│         │                │          │        │                   │               │ the source, allowing X-mount.owner/group/mode...           │
+│         │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2026-78410                 │
+└─────────┴────────────────┴──────────┴────────┴───────────────────┴───────────────┴────────────────────────────────────────────────────────────┘

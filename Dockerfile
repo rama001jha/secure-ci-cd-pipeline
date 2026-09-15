@@ -1,6 +1,5 @@
-FROM nginx:1.14
+FROM nginx:alpine
 
 COPY website /usr/share/nginx/html
 
 EXPOSE 80
-
